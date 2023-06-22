@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild index.js --bundle  --outfile=bundle.js --watch"
   },
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0"
   }
 }
