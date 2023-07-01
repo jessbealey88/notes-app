@@ -5,12 +5,23 @@ class NotesView {
 
         document.querySelector('#add-note-button').addEventListener('click', () => {
             const newNote = document.querySelector('#note-input').value;
-            this.model.addNote(newNote);
+            this.addNewNote(newNote);
         });
     }
 
+    addNewNote(newNote) {
+        this.model.addNote(newNote);
+        this.displayNotes();
+      }
+
  
     displayNotes() {
+        document.querySelectorAll('.note').forEach(element => {
+            element.remove();
+        })
+
+        document.querySelector('#note-input').value = '';
+
         const notes = this.model.getNotes();
 
         notes.forEach(note => {
