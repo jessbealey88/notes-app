@@ -13,13 +13,17 @@ describe('Notes view', () => {
 
         const model = new NotesModel();
         const view = new NotesView(model);
-        model.addNote('A first note');
-        model.addNote('Another note');
+       
+        const input = document.querySelector('#note-input');
+        input.value = 'New test note';
+
+        const button = document.querySelector('#add-note-button');
+        button.click();
 
         view.displayNotes();
 
-        expect(document.querySelectorAll('div.note').length).toEqual(2);
-
+        expect(document.querySelectorAll('div.note').length).toEqual(1);
+        expect(document.querySelectorAll('div.note')[0].textContent).toEqual('New test note');
 
     });
 });
